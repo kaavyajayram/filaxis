@@ -1,4 +1,27 @@
 .header {
   display: flex;
   flex-flow: row nowrap;
+  padding: 24px;
+}
+
+.spacer {
+  margin: auto;
+}
+
+.navlinks {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'Cormorant', serif;
+  margin: 24px;
+}
+
+.quote {
+  background-color: #2c2c2c;
+  color: #efefef;
+  border-radius: 4px;
+  padding: 12px;
 }
