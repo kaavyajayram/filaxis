@@ -2,6 +2,8 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
+
+  background-color: #efefef;
 }
 
 .page {
@@ -16,8 +18,15 @@ body {
 .header {
   display: flex;
   flex-flow: row nowrap;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #efefef;
   padding: 24px;
-  padding-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px black solid;
 }
 
 .spacer {
@@ -68,6 +77,9 @@ hr {
   padding-bottom: 80px;
 }
 
+.section:first-child {
+  padding-top: 200px;
+}
 .text-block {
   display: inline-block;
 
