@@ -29,6 +29,10 @@ body {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
 }
 
+.logoSmall {
+  display: none;
+}
+
 .spacer {
   margin: auto;
 }
@@ -68,6 +72,14 @@ hr {
   margin: 0;
 }
 
+.bigSection {
+  text-decoration: none;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+}
+
 .section {
   display: flex;
   flex-flow: row nowrap;
@@ -86,11 +98,15 @@ hr {
   height: min-content;
 }
 
+#menu-toggle,
+.hamburger {
+  display: none;
+}
+
 h3 {
   font-family: "Poppins", sans-serif;
   margin-bottom: 2px;
   font-size: 24px;
-  width: unset;
   display: inline-block;
   max-width: 500px;
 }
@@ -99,6 +115,10 @@ p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   max-width: 500px;
+}
+
+.nav-mobile {
+  display: none;
 }
 
 .filler-image {
@@ -116,4 +136,179 @@ p {
 h4 {
   font-family: "Poppins", sans-serif;
   font-size: 24px;
+}
+
+@media only screen and (max-width: 800px) {
+  .section {
+    flex-flow: column nowrap;
+    justify-items: center;
+    max-width: 80%;
+    align-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section:nth-child(2) {
+    flex-flow: column-reverse;
+  }
+
+  .section:first-child {
+    padding-top: 84px;
+  }
+
+  .filler-image {
+    margin-left: 0;
+    width: 100%;
+    height: 400px;
+  }
+
+  .filler-image.mirror {
+    margin-right: 0;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .header {
+    padding: 12px;
+  }
+
+  .logoSmall {
+    display: unset;
+    width: 48px;
+    height: auto;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .quote {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-right: 12px;
+  }
+
+  .navlinks {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    font-size: 36px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  #menu-toggle:checked ~ .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #efefef;
+    border-radius: 4px;
+    padding: 12px;
+    position: absolute;
+    top: calc(100% + 12px);
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  }
+
+  #nav-icon3 {
+    width: 36px;
+    height: 25px;
+    position: relative;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  #nav-icon3 span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #2c2c2c;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+  #nav-icon3 span:nth-child(1) {
+    top: 0px;
+  }
+
+  #nav-icon3 span:nth-child(2),
+  #nav-icon3 span:nth-child(3) {
+    top: 10px;
+  }
+
+  #nav-icon3 span:nth-child(4) {
+    top: 20px;
+  }
+
+  #menu-toggle:checked + .hamburger #nav-icon3 span:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+
+  #menu-toggle:checked + .hamburger #nav-icon3 span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #menu-toggle:checked + .hamburger #nav-icon3 span:nth-child(3) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(-45deg);
+  }
+
+  #menu-toggle:checked + .hamburger #nav-icon3 span:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .nav-mobile h2 {
+    font-size: 24px;
+    padding: 6px;
+  }
 }
