@@ -62,19 +62,15 @@ hr {
 .section {
   display: flex;
   flex-flow: row nowrap;
-
-  padding-left: 200px;
-  padding-right: 200px;
-
-  padding-top: 60px;
+  padding-top: 80px;
   align-items: center;
+  justify-content: center;
+  padding-bottom: 80px;
 }
 
 .text-block {
   display: inline-block;
 
-  width: calc(100% - 600px);
-  padding-right: 100px;
   height: min-content;
 }
 
@@ -84,15 +80,28 @@ h3 {
   font-size: 24px;
   width: unset;
   display: inline-block;
+  max-width: 500px;
 }
 
 p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+  max-width: 500px;
 }
 
 .filler-image {
-  width: 400px;
+  width: 600px;
   height: 400px;
   background-color: gray;
+  margin-left: 84px;
+}
+
+.filler-image.mirror {
+  margin-right: 84px;
+  margin-left: unset;
+}
+
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
 }
