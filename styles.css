@@ -2,20 +2,15 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
-
   background-color: #efefef;
 }
 
 .page {
-  max-width: 1400px;
-  min-width: 75%;
   align-self: center;
   align-content: center;
   display: flex;
   flex-flow: column nowrap;
 }
-
-
 
 .header {
   display: flex;
@@ -106,20 +101,33 @@ hr {
 .section {
   display: flex;
   flex-flow: row nowrap;
-  padding-top: 80px;
+  padding-top: 100px;
   align-items: center;
   justify-content: center;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
+  width: 100%;
 }
 
 .section:first-child {
   padding-top: 200px;
+  background-color: rgb(97, 35, 122);
+  color: #efefef;
 }
 
 .text-block {
   display: inline-block;
   height: min-content;
 }
+
+.section:nth-child(2) {
+  background-color: rgb(241, 137, 105);
+  color: #efefef;
+}
+.section:nth-child(3) {
+  background-color: rgb(136, 51, 216);
+  color: #efefef;
+}
+
 
 .text-block p {
   max-width: 800px;
@@ -165,6 +173,12 @@ h4 {
   font-size: 24px;
 }
 
+.kawaii {
+    width: 400px;
+    height: auto;
+    margin-left: 84px;
+  }
+
 @media only screen and (max-width: 800px) {
   .section {
     flex-flow: column nowrap;
@@ -188,6 +202,8 @@ h4 {
     width: 100%;
     height: 400px;
   }
+
+  
 
   .section:last-child {
     max-width: 100%;
