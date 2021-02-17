@@ -208,7 +208,11 @@ h4 {
     height: 400px;
   }
 
-  
+  .kawaii, .kawaii.mirror {
+    width: 80%;
+    height: auto;
+    margin: 0;
+  }
 
   .section:last-child {
     max-width: 100%;
