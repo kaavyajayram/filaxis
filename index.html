@@ -4,6 +4,8 @@
 <head>
   <link rel="stylesheet" href="./styles.css">
   </link>
+  <link rel="stylesheet" href="./carousel.css">
+  </link>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
   </style>
@@ -63,7 +65,43 @@
         <p>Introducing personal scale disgrace insurance for social media celebrities and content creators.
           Manage your public relations and let us manage your peace of mind.</p>
       </div>
-      <div class="filler-image"></div>
+        <div class="wrapper">
+          <input checked type=radio name="slider" id="slide1" />
+          <input type=radio name="slider" id="slide2" />
+          <input type=radio name="slider" id="slide3" />
+
+          <div class="slider-wrapper">
+            <div class=inner>
+              <article>
+                <img height="auto" width="400" src="./assets/pexels-nappy-3602934.jpg" />
+              </article>
+
+              <article>
+                <img height="auto" width="400" src="./assets/pexels-artem-podrez-6003271.jpg" />
+              </article>
+
+              <article>
+                <img height="auto" width="400" src="./assets/pexels-anastasia-shuraeva-4236824.jpg" />
+              </article>
+            </div>
+            <!-- .inner -->
+          </div>
+          <!-- .slider-wrapper -->
+
+          <div class="slider-prev-next-control">
+            <label for=slide1></label>
+            <label for=slide2></label>
+            <label for=slide3></label>
+          </div>
+          <!-- .slider-prev-next-control -->
+
+          <div class="slider-dot-control">
+            <label for=slide1></label>
+            <label for=slide2></label>
+            <label for=slide3></label>
+          </div>
+          <!-- .slider-dot-control -->
+        </div>
     </div>
     <div class="section">
 
