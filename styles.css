@@ -32,7 +32,7 @@ body {
 }
 
 .logo {
-  height: 60px;
+  height: 80px;
   width: auto;
 
 }
@@ -86,9 +86,15 @@ h5 {
 }
 .quote {
   border-radius: 48px;
-  border: 4px #2c2c2c solid;
+  border: 4px #3100e0 solid;
   padding: 12px;
   font-weight: 700;
+  color: #3100e0
+}
+
+.quote:hover {
+  background-color: #3100e0;
+  color: #efefef;
 }
 
 hr {
@@ -119,7 +125,7 @@ hr {
 
 .section:first-child {
   padding-top: 200px;
-  background-color: rgb(97, 35, 122);
+  background-color: #3308cc;
   color: #efefef;
 }
 
@@ -128,7 +134,7 @@ hr {
   height: min-content;
 }
 
-.section:nth-child(2) {
+.section:nth-of-type(2) {
   background-color: rgb(241, 137, 105);
   color: #efefef;
 }
@@ -136,6 +142,14 @@ hr {
   background-color: rgb(136, 51, 216);
   color: #efefef;
 }
+
+.section:nth-of-type(1) {
+  background-color: #3308cc;
+
+  color: #efefef;
+}
+
+
 
 
 .text-block p {
@@ -198,6 +212,25 @@ h4 {
   margin-right: 84px;
 }
 
+.logo-row {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding-top: 12px;
+}
+
+.logo-row img {
+  height: 48px;
+  width: auto;
+  padding: 24px;
+}
+
+.platforms {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 @media only screen and (max-width: 800px) {
   .section {
     flex-flow: column nowrap;
@@ -223,8 +256,8 @@ h4 {
     height: 400px;
   }
 
-  .kawaii, .kawaii.mirror {
-    width: 50%;
+  .kawaii, .kawaii.mirror, .kawaii.first {
+    width: 60%;
     height: auto;
     margin: 0;
   }
