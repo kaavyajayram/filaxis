@@ -128,7 +128,6 @@ hr {
   color: #efefef;
 }
 
-
 .text-block p {
   max-width: 800px;
 }
@@ -174,10 +173,15 @@ h4 {
 }
 
 .kawaii {
-    width: 400px;
-    height: auto;
-    margin-left: 84px;
-  }
+  width: 400px;
+  height: auto;
+  margin-left: 84px;
+}
+
+.kawaii.mirror {
+  margin-left: 0;
+  margin-right: 84px;
+}
 
 @media only screen and (max-width: 800px) {
   .section {
@@ -202,8 +206,6 @@ h4 {
     width: 100%;
     height: 400px;
   }
-
-  
 
   .section:last-child {
     max-width: 100%;
