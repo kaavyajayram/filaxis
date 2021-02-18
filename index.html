@@ -4,35 +4,29 @@
 <head>
   <link rel="stylesheet" href="./styles.css">
   </link>
-  <link rel="stylesheet" href="./carousel.css">
-  </link>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
-  </style>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="./assets/filaxis-small.svg">
-<script> 
+  <script>
 
-function mailform() {
-  const url = "https://script.google.com/macros/s/AKfycbzoN9YQaJRVNko_nWTvXsEmms_Ge64NnqhAQ-RivIEAIOUDZ4LmQqniEA/exec"
-  const form = document.forms['email-form'];
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(url, { method: 'POST', body: new FormData(form)})
-      .then(response => 
-        {
-          console.log('Success', response);
-          document.getElementById('thanks').style.display = ''; 
-          form.style.display = 'none';
-        })
-      .catch(error => console.error('Error!', error.message))
-  });
-}
+    function mailform() {
+      const url = "https://script.google.com/macros/s/AKfycbzoN9YQaJRVNko_nWTvXsEmms_Ge64NnqhAQ-RivIEAIOUDZ4LmQqniEA/exec"
+      const form = document.forms['email-form'];
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(url, { method: 'POST', body: new FormData(form) })
+          .then(response => {
+            console.log('Success', response);
+            document.getElementById('thanks').style.display = '';
+            form.style.display = 'none';
+          })
+          .catch(error => console.error('Error!', error.message))
+      });
+    }
 
-</script>
+  </script>
   <title>Filaxis Insurance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -152,7 +146,7 @@ function mailform() {
         <img src="assets/kawaii4.svg" class="kawaii mirror">
         <div class="text-block">
           <h3>Request a Quote</h3>
-          <form name="email-form" >
+          <form name="email-form">
             <label for="email">Email</label><br>
             <textarea type="text" id="email" name="email"></textarea><br>
             <label for="name">Name</label><br>
@@ -160,103 +154,16 @@ function mailform() {
             <label for="sm">Social Media Handles</label><br>
             <textarea type="text" id="sm" name="sm"></textarea>
 
-          <button class="submit" type="submit">Submit</button>
+            <button class="submit" type="submit">Submit</button>
           </form>
           <div id="thanks" class="success" style="display:none;">
-           Thanks! We'll be in touch.
+            Thanks! We'll be in touch.
           </div>
         </div>
       </div>
     </a>
   </div>
-
-  <div class="terms-block">
-    <h5>Terms and Conditions</h5>
-    <p class="terms-text">
-      For reoccurring incidence of malaprops (i), repeated documented disgraceful behavior(ii), manufactured disgrace,
-      or disgrace predating signing date (iii). Filaxis Insurance Company (FIC), reserves the right to withhold and/or
-      attenuate all claims and benefits. FIC reserves the right to cancel policies held by any third party beneficiary
-      or policy holder given serial controversy or permanent inability to entertain. Claims made on policies held less
-      than four (4) months will be denied pending review.
-    <p>
-    <h5>Electronic Transactions Agreement</h5>
-    <p class="terms-text">
-      Filaxis is an insurance company, policy website insurance site policy. From time to time website insurance
-      (email)
-      digitally keeps records of transactions for quality and billing purposes. The site Filaxis.pendleton.web
-      (https://
-      Filaxis.pendleton.web) and affiliated companies. Although we primarily conduct business electronically. Filaxis
-      provides paper copies printed of records. All available for recovery at Filaxis.pendleton.web (https://
-      Filaxis.pendleton.web). Other Insurance Policy Documents and paper copies can be redeemed by calling
-      1-800-PROFILAXIS. Request Receivable and payable between 9 am and 5 pm EST. Roberto Plaque is a provisioner of
-      substandard wallets. The demiurgical litmus for the temper of one's soul can be said to be the residue of their
-      faith. Do not fret, when you return to null the moist earth shall kiss your back. The relays of cool shade will
-      disperse you, and maybe, in the span of near endless eons, you will be more or less corporeal again, continuity
-      be
-      damned. The black soldier fly (BSFL) is a great source of fatty acids and is used in many hair products as well
-      as
-      a feed for stock chickens. Strangely, the etymology of the order `Diptera` has nothing to do with the etymology
-      of
-      'Diptheria', and BSFL nor any other animals of the order Diptera are known carriers of the bacteria
-      Corynebacterium diphtheriae.
-
-      You must have the Technical Requirements to download, display, print, and retain Insurance Policy Documents in
-      Adobe Portable Display Format. Once you purchase your Policy, you will be given the opportunity to download a
-      free
-      copy of Adobe Reader so that you can view Insurance Policy Documents in Adobe Portable Display Format. If you
-      consent to receive Insurance Policy Documents electronically, you must have: (i) a computer capable of
-      connecting
-      to the internet; (ii) an internet service provider; (iii) a browser capable of viewing our web site; (iv) an
-      email
-      service account that allows you to read, write, and send email; (v) an active email address, and (vi) the
-      ability
-      to use hyperlinks to access other web sites (collectively referred to as the "Technical Requirements"). If you
-      do
-      not have the Technical Requirements, you cannot receive Insurance Policy Documents electronically.
-    <p>
-  </div>
-
-
-  <div class="section">
-    <div class="text-block">
-      <h3>This Is Not Real... </h3>
-      <p> ...it is a piece of satire. This is a terrible business model that does not make sense for
-        a number of reasons. 'Disgrace insurance' is already a concept in the film industry, but it is purchased on
-        part
-        of
-        the studio and often packaged with other kinds of film insurance by default so as not to insinuate disgrace on
-        part of the actors or producers. 'Cancellation insurance' would be a product marketed toward petty celebrities
-        and/or other public figures who feel the need to hedge bets either against themselves or against what they
-        perceive as an ignorant populace.
-        <br>
-        <br>
-        Now that we've thoroughly deflated the joke we'd like to give credit to the 'Blue Check Homes' viral art
-        project
-        for
-        inspiring this. This project is in no way associated with 'Blue Check Homes' or its creator.
-
-        <br>
-        <br>
-        If you were seriously considering spending money on this service we recommend you put that money towards
-        any
-        of the following organizations.
-
-        <br>
-        <br>
-        To recap:
-        <br>
-      <p>- If you believed this was real and acted on it in earnest we hope you audit your
-        intuitions in the future.
-      <p>
-      <p>- If you unironically want to make this a reality then you are a vampire, or at the very
-        least a dark burueamancer and we hope whatever eventually does you in has less spite in its heart than you.
-      </p>
-      </p>
-    </div>
-  </div>
-
-  </div>
-  </div>
+  <a href="/terms">Terms</a>
 
 </body>
 

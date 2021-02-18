@@ -73,6 +73,7 @@ h5 {
 }
 
 .terms-block {
+  padding-top: 140px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
