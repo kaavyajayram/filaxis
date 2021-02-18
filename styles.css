@@ -212,6 +212,82 @@ textarea {
   color: rgb(136, 51, 216);
 }
 
+.footer {
+  background-color: #2c2c2c;
+  color: #efefef;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 60px 30%;
+  align-items: flex-start;
+  position: relative;
+  justify-content: space-between;
+
+}
+
+.social {
+  height: 28px;
+  width: auto;
+  padding-right: 24px;
+
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 75%;
+  padding-right: 12px;
+}
+
+
+.logosocials {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+
+}
+
+.socialsrow {
+  display: flex;
+  flex-flow: row nowrap;
+
+}
+.footer-logo {
+  height: 48px;
+  width: auto;
+  padding-bottom: 16px;
+
+}
+
+.links {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  padding-left: 25%;
+  grid-auto-flow: column;
+  padding-top: 12px;
+}
+
+.linkheader {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 8px;
+
+}
+
+.linkheader:first-child {
+  padding-right: 48px;
+}
+
+.link {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+}
+
+
 label {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -374,6 +450,35 @@ h4 {
     font-size: 20px;
     padding: 0px;
     margin: 0px;
+  }
+
+  .footer {
+    padding: 40px 10%;
+  }
+
+  .footer-logo {
+    height: 32px;
+  }
+  .social {
+    height: 24px;
+  }
+
+  .links {
+    padding-left: 10%;
+
+    padding-top: 8px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+
+  .linkheader {
+    font-size: 16px;
+  }
+
+  .linkheader:first-child {
+    padding-right: 16px;
   }
 
   .header {
