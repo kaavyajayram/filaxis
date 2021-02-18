@@ -13,13 +13,31 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="./assets/filaxis-small.svg">
+<script> 
+
+function mailform() {
+  const url = "https://script.google.com/macros/s/AKfycbzoN9YQaJRVNko_nWTvXsEmms_Ge64NnqhAQ-RivIEAIOUDZ4LmQqniEA/exec"
+  const form = document.forms['email-form'];
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(url, { method: 'POST', body: new FormData(form)})
+      .then(response => 
+        {
+          console.log('Success', response);
+          document.getElementById('thanks').style.display = ''; 
+          form.style.display = 'none';
+        })
+      .catch(error => console.error('Error!', error.message))
+  });
+}
+
+</script>
   <title>Filaxis Insurance</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
-<body>
+<body onload="mailform()">
   <div class="header"><img class="logo" src="assets/Filaxis.svg">
     <img class="logoSmall" src="assets/filaxis-small.svg">
 
@@ -134,15 +152,19 @@
         <img src="assets/kawaii4.svg" class="kawaii mirror">
         <div class="text-block">
           <h3>Request a Quote</h3>
-          <form>
+          <form name="email-form" >
             <label for="email">Email</label><br>
             <textarea type="text" id="email" name="email"></textarea><br>
             <label for="name">Name</label><br>
             <textarea type="text" id="name" name="name"></textarea><br>
             <label for="sm">Social Media Handles</label><br>
             <textarea type="text" id="sm" name="sm"></textarea>
+
+          <button class="submit" type="submit">Submit</button>
           </form>
-          <button class="submit">Submit</button>
+          <div id="thanks" class="success" style="display:none;">
+           Thanks! We'll be in touch.
+          </div>
         </div>
       </div>
     </a>
