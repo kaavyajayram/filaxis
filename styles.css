@@ -60,6 +60,7 @@ h2 {
   margin: 6px;
   font-size: 24px;
   font-weight: 500;
+  color: #2c2c2c
 }
 
 a {
@@ -224,6 +225,7 @@ textarea {
   align-items: center;
   position: relative;
   justify-content: space-between;
+  overflow: hidden;
 
 }
 
@@ -231,6 +233,26 @@ textarea {
   height: 28px;
   width: auto;
 
+}
+
+.circle {
+  position: absolute;
+  top: -30px;
+  right: 4px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color:rgb(241, 137, 105)
+}
+
+.circle2 {
+  position: absolute;
+  bottom: -30px;
+  left: 4px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgb(136, 51, 216);
 }
 
 .socialsrow a:first-child {
@@ -402,6 +424,17 @@ h4 {
   .section.purple,
   .section.coral, .section.blue {
     padding-top: 40px;
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    top: -20px
+  }
+  .circle2 {
+    width: 80px;
+    height: 80px;
+    bottom: -30px;
   }
 
   .filler-image {
