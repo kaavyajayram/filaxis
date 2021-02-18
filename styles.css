@@ -36,12 +36,10 @@ html {
   margin-left: 20px;
 }
 
-.logoSmall {
-  display: none;
-}
+
 
 .logo {
-  height: 64px;
+  height: 56px;
   width: auto;
 }
 
@@ -60,7 +58,7 @@ h2 {
   margin: 6px;
   font-size: 24px;
   font-weight: 500;
-  color: #2c2c2c
+  color: #2c2c2c;
 }
 
 a {
@@ -477,11 +475,7 @@ h4 {
     font-size: 14px;
   }
 
-  h2 {
-    font-size: 20px;
-    padding: 0px;
-    margin: 0px;
-  }
+
 
   .footer {
     padding: 40px 10%;
@@ -506,14 +500,10 @@ h4 {
     padding: 12px;
   }
 
-  .logoSmall {
-    display: unset;
-    width: 48px;
-    height: auto;
-  }
 
   .logo {
-    display: none;
+    height: 48px;
+    width: auto;
   }
 
   .quote {
@@ -566,12 +556,17 @@ h4 {
     justify-content: center;
   }
 
+  .header a {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
   #menu-toggle:checked ~ .nav-mobile {
     display: flex;
     flex-direction: column;
     background-color: #efefef;
     border-radius: 4px;
-    padding: 12px;
+    padding: 6px;
     position: absolute;
     top: calc(100% + 12px);
 
@@ -648,7 +643,7 @@ h4 {
   }
 
   .nav-mobile h2 {
-    font-size: 24px;
+    font-size: 20px;
     padding: 6px;
   }
   .test {
