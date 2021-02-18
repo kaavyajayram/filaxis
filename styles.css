@@ -295,12 +295,16 @@ h4 {
 
   }
 
-  .section:nth-child(2) {
+  .section:nth-child(2), .section.purple {
     flex-flow: column-reverse;
   }
+ 
 
   .section:first-child {
     padding-top: 84px;
+  }
+ .section.purple {
+    padding-top: 40px;
   }
 
   .filler-image {
@@ -321,6 +325,10 @@ h4 {
 
   .text-block {
     padding: 20px;
+  }
+
+  textarea {
+    max-width: 100%
   }
 
   .filler-image.mirror {
@@ -362,6 +370,15 @@ h4 {
     padding: 0;
   }
 
+  .text-block {
+    max-width: 80%;
+  }
+
+  .logo-row {
+    flex-flow: row wrap;
+    max-width: 100%;
+  }
+
   nav {
     flex: 1;
     display: flex;
@@ -381,6 +398,13 @@ h4 {
 
   .terms-text {
     max-width: 90%;
+  }
+
+  label {
+    font-size: 16px
+  }
+  .submit {
+    font-size: 20px;
   }
 
   .hamburger {
