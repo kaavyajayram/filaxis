@@ -175,15 +175,17 @@ textarea {
   border: 4px #efefef solid;
   background-color: transparent;
   font-family: 'Poppins', sans-serif;
-  padding: 12px;
+  padding: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin-top: 24px;
   border-radius: 36px;
   align-self: flex-end;
-  width: 120px;
+  width: 144px;
   color: #efefef;
   font-weight: 700;
   font-size: 24px;
-  margin-left: calc(100% - 120px) 
+  margin-left: calc(100% - 144px) 
 }
 
 .submit:hover {
