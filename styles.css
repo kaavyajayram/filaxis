@@ -316,7 +316,7 @@ textarea:nth-of-type(3) {
 }
 
 .text-block p {
-  max-width: 800px;
+  max-width: min(800px, calc(50vw - 20px));
 }
 
 #menu-toggle,
@@ -366,7 +366,7 @@ h4 {
 }
 
 .kawaii.first {
-  width: 600px;
+  width: min(600px, calc(50vw - 100px));
   height: auto;
 }
 
@@ -397,7 +397,7 @@ h4 {
   width: 100%;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .section {
     flex-flow: column nowrap;
     justify-items: center;
@@ -444,10 +444,17 @@ h4 {
   .kawaii,
   .kawaii.mirror,
   .kawaii.first {
-    width: 60%;
+    width: 50%;
     height: auto;
     margin: 0;
   }
+
+  .kawaii.first {
+    width: 80%;
+    height: auto;
+  }
+
+
 
   .section:last-child {
     max-width: 100%;
@@ -471,8 +478,15 @@ h4 {
   h4 {
     font-size: 20px;
   }
+  .text-block p {
+    font-size: 16px;
+    max-width: unset;
+  }
   p {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  h3 {
+    max-width: 100%;
   }
 
 
@@ -517,7 +531,7 @@ h4 {
 
   .logo-row {
     flex-flow: row wrap;
-    max-width: 100%;
+    max-width: 90%;
   }
 
   nav {
