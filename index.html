@@ -12,12 +12,11 @@
   <script>
 
     function mailform() {
-      const url = "https://script.google.com/macros/s/AKfycbyr5ASjjMdntViTPwnZaRzQrCobFkKyxi0OIjpG3CWW85DKgNRNpNv-/exec"
+      const url = "https://script.google.com/macros/s/AKfycbx-DA4YfjmJhiox74DpDT7400fUiCxSXnnNeHVW1geBMWNdnReCHrh7mg/exec"
       const form = document.forms['email-form'];
       form.addEventListener('submit', e => {
-        console.log('ha')
         e.preventDefault();
-        fetch(url, { method: 'POST', body: new FormData(form) })
+        fetch(url, { method: 'POST', body: new FormData(form)  })
           .then(response => {
             console.log('Success', response);
             document.getElementById('thanks').style.display = '';
@@ -148,7 +147,7 @@
           <h3>Request a Quote</h3>
           <form name="email-form">
             <label for="email">Email</label><br>
-            <textarea type="text" id="email" name="email"></textarea><br>
+            <textarea type="email" id="email" name="email"></textarea><br>
             <label for="name">Name</label><br>
             <textarea type="text" id="name" name="name"></textarea><br>
             <label for="sm">Social Media Handles</label><br>
@@ -174,11 +173,11 @@
     </div>
     <div class="links">
       <a href="mailto:contact@filaxis.pro" class="link">Contact us</a>
-      <a>&nbsp;  &#x2022; &nbsp;</a>
-      <a href="/terms" class="link">  Terms</a>
+      <a>&nbsp; &#x2022; &nbsp;</a>
+      <a href="/terms" class="link"> Terms</a>
     </div>
     <div class="circle"></div>
-<div class="circle2"></div>
+    <div class="circle2"></div>
     <p class="copyright"> &#169 Filaxis Insurance 2020</p>
   </div>
 
