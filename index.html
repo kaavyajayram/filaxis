@@ -12,9 +12,10 @@
   <script>
 
     function mailform() {
-      const url = "https://script.google.com/macros/s/AKfycbzoN9YQaJRVNko_nWTvXsEmms_Ge64NnqhAQ-RivIEAIOUDZ4LmQqniEA/exec"
+      const url = "https://script.google.com/macros/s/AKfycbyr5ASjjMdntViTPwnZaRzQrCobFkKyxi0OIjpG3CWW85DKgNRNpNv-/exec"
       const form = document.forms['email-form'];
       form.addEventListener('submit', e => {
+        console.log('ha')
         e.preventDefault();
         fetch(url, { method: 'POST', body: new FormData(form) })
           .then(response => {
