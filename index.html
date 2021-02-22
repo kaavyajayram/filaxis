@@ -14,13 +14,22 @@
     function mailform() {
       const url = "https://script.google.com/macros/s/AKfycbx-DA4YfjmJhiox74DpDT7400fUiCxSXnnNeHVW1geBMWNdnReCHrh7mg/exec"
       const form = document.forms['email-form'];
+      const submit = document.getElementById('submit')
       form.addEventListener('submit', e => {
         e.preventDefault();
-        fetch(url, { method: 'POST', body: new FormData(form)  })
+        document.getElementById('loader').style.display = '';
+        submit.style.opacity = '0';
+        submit.style.cursor = 'auto'
+        submit.disabled = true
+
+        Array.from(document.getElementsByTagName('textarea')).forEach((el) => { el.style.opacity = "60%"; el.style.pointerEvents = "none" })
+
+        fetch(url, { method: 'POST', body: new FormData(form) })
           .then(response => {
             console.log('Success', response);
-            document.getElementById('thanks').style.display = '';
-            form.style.display = 'none';
+            document.getElementById('thanks').style.opacity = '100%';
+            document.getElementById('loader').style.display = 'none';
+
           })
           .catch(error => console.error('Error!', error.message))
       });
@@ -116,11 +125,11 @@
       <div class="platforms">
         <h3>Applicable Platforms</h3>
         <div class="logo-row">
-          <img src="assets/insta.svg" alt="Instagram">
-          <img src="assets/twitter.svg" alt="Twitter">
-          <img src="assets/tik-tok.svg" alt="TikTok">
-          <img src="assets/facebook.svg" alt="Facebook">
-          <img src="assets/youtube.svg" alt="YouTube">
+          <img src="assets/insta.svg" title="Instagram">
+          <img src="assets/twitter.svg" title="Twitter">
+          <img src="assets/tik-tok.svg" title="TikTok">
+          <img src="assets/facebook.svg" title="Facebook">
+          <img src="assets/youtube.svg" title="YouTube">
         </div>
       </div>
     </div>
@@ -143,21 +152,29 @@
     <a class="bigSection" id="quote">
       <div class="section purple second">
         <img src="assets/kawaii4.svg" class="kawaii mirror">
-        <div class="text-block">
+        <div class="text-block" style="position: relative;">
           <h3>Request a Quote</h3>
-          <form name="email-form">
-            <label for="email">Email</label><br>
-            <textarea type="email" id="email" name="email"></textarea><br>
-            <label for="name">Name</label><br>
-            <textarea type="text" id="name" name="name"></textarea><br>
-            <label for="sm">Social Media Handles</label><br>
-            <textarea type="text" id="sm" name="sm"></textarea>
+          <form name="email-form" class="form">
 
-            <button class="submit" type="submit">Submit</button>
+            <label for="email">Email</label><br>
+            <textarea type="email" id="email" name="email" required></textarea><br>
+            <label for="name">Name</label><br>
+            <textarea type="text" id="name" name="name" required></textarea><br>
+            <label for="sm">Social Media Handles</label><br>
+            <textarea type="text" id="sm" name="sm" required></textarea>
+            <div class="button-wrapper">
+              <div class="loader" id="loader" style="display:none"></div>
+
+              <button class="submit" id="submit" type="submit">Submit </button>
+              <div id="thanks" class="success" style="opacity: 0;">
+                Thanks! We'll be in touch.
+              </div>
+            </div>
+
+
+
           </form>
-          <div id="thanks" class="success" style="display:none;">
-            Thanks! We'll be in touch.
-          </div>
+
         </div>
       </div>
     </a>
@@ -173,7 +190,7 @@
     </div>
     <div class="links">
       <a href="mailto:contact@filaxis.pro" class="link">Contact us</a>
-      <a>&nbsp; &#x2022; &nbsp;</a>
+      <span>&nbsp; &#x2022; &nbsp;</span>
       <a href="/terms" class="link"> Terms</a>
     </div>
     <div class="circle"></div>
