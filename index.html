@@ -16,6 +16,8 @@
       const form = document.forms['email-form'];
       const submit = document.getElementById('submit')
 
+      const back = document.getElementById('back')
+
       form.addEventListener('submit', e => {
         e.preventDefault();
         document.getElementById('loader').style.display = '';
@@ -25,8 +27,8 @@
         const sminfo = document.getElementById('sminfo')
         sminfo.style.opacity = "60%"
         sminfo.style.pointerEvents = 'none'
-        document.getElementById('email').style.opacity = "60%"
-        document.getElementById('email').style.pointerEvents = "none"
+        back.style.display = 'none'
+
 
         fetch(url, { method: 'POST', body: new FormData(form) })
           .then(response => {
@@ -60,6 +62,52 @@
       sminfo.style.pointerEvents = ''
       next.style.display = 'none'
       submitwrapper.style.display = ''
+      const tw = document.getElementById('tw')
+      const inst = document.getElementById('in')
+      const tik = document.getElementById('tik')
+      const fb = document.getElementById('fb')
+      const yt = document.getElementById('yt')
+      tw.tabIndex = 1
+      inst.tabIndex = 2
+      tik.tabIndex = 3
+      fb.tabIndex = 4
+      yt.tabIndex = 5
+      submit.tabIndex = 6
+      email.tabIndex = 0
+      name.tabIndex = 0
+      next.tabIndex = 0
+    }
+
+    function formback(e) {
+      e.preventDefault()
+      const nameinfo = document.getElementById('nameinfo')
+      const form = document.forms['email-form']
+      const name = document.getElementById('name')
+      const email = document.getElementById('email')
+
+      const next = document.getElementById('next')
+
+      const sminfo = document.getElementById('sminfo')
+      const submitwrapper = document.getElementById('submitwrapper')
+      nameinfo.style.display = ''
+      sminfo.style.opacity = '0%'
+      sminfo.style.pointerEvents = 'none'
+      next.style.display = ''
+      submitwrapper.style.display = 'none'
+      const tw = document.getElementById('tw')
+      const inst = document.getElementById('in')
+      const tik = document.getElementById('tik')
+      const fb = document.getElementById('fb')
+      const yt = document.getElementById('yt')
+      tw.tabIndex = 0
+      inst.tabIndex = 0
+      tik.tabIndex = 0
+      fb.tabIndex = 0
+      yt.tabIndex = 0
+      submit.tabIndex = 0
+      name.tabIndex = 1
+      email.tabIndex = 2
+      next.tabIndex = 3
     }
 
     function checknextvalid() {
@@ -207,7 +255,7 @@
             <div class="name-info" id="nameinfo">
               <p>Tell us your name</p>
               <div class="sm-wrapper">
-                <textarea type="text" id="name" name="name" required placeholder="Name"></textarea><br>
+                <textarea type="text" id="name" name="name" required placeholder="Name" tabindex=1></textarea><br>
 
                 <img src="assets/user.svg" class="sm-icon" style="right:0">
               </div>
@@ -215,7 +263,7 @@
 
               <p>Tell us your email</p>
               <div class="sm-wrapper">
-                <input type="email" id="email" name="email" required placeholder="Email"></input>
+                <input type="email" id="email" name="email" required placeholder="Email" tabindex=2></input>
 
                 <img src="assets/email.svg" class="sm-icon" style="right:0">
 
@@ -227,49 +275,44 @@
               <p>Tell us any social media</p>
               <div class="sm-big-wrapper">
                 <div class="sm-wrapper">
-                  <textarea type="text" id="tw" name="tw" maxlength="40"
-                   placeholder="Twitter" ></textarea>
-                  <img src="assets/twitter.svg" class="sm-icon" id="tw_icon" >
+                  <textarea type="text" id="tw" name="tw" maxlength="40" placeholder="Twitter" tabindex=0></textarea>
+                  <img src="assets/twitter.svg" class="sm-icon" id="tw_icon">
                 </div>
 
                 <div class="sm-wrapper">
 
-                  <textarea type="text" id="in" name="in" maxlength="40" placeholder="Instagram"
-                    ></textarea>
+                  <textarea type="text" id="in" name="in" maxlength="40" placeholder="Instagram" tabindex=0></textarea>
 
-                  <img src="assets/insta.svg" class="sm-icon" id="in_icon" >
+                  <img src="assets/insta.svg" class="sm-icon" id="in_icon">
                 </div>
 
                 <div class="sm-wrapper">
 
-                  <textarea type="text" id="tik" name="tik" maxlength="40" placeholder="TikTok"
-                    ></textarea>
+                  <textarea type="text" id="tik" name="tik" maxlength="40" placeholder="TikTok" tabindex=0></textarea>
 
-                  <img src="assets/tik-tok.svg" class="sm-icon" id="tik_icon" >
+                  <img src="assets/tik-tok.svg" class="sm-icon" id="tik_icon">
                 </div>
 
                 <div class="sm-wrapper">
-                  <textarea type="text" id="fb" name="fb" maxlength="50" placeholder="Facebook"
-                    ></textarea>
+                  <textarea type="text" id="fb" name="fb" maxlength="50" placeholder="Facebook" tabindex=0></textarea>
 
                   <img src="assets/facebook-quote.svg" class="sm-icon" id="fb_icon">
                 </div>
 
                 <div class="sm-wrapper">
 
-                  <textarea type="text" id="yt" name="yt" maxlength="40" placeholder="YouTube"
-                    ></textarea>
+                  <textarea type="text" id="yt" name="yt" maxlength="40" placeholder="YouTube" tabindex=0></textarea>
 
                   <img src="assets/youtube.svg" class="sm-icon" id="yt_icon" style=>
                 </div><br>
               </div>
             </div>
 
-            <button class="next" onclick="formnext(event)" id="next" disabled>Next</button>
+            <button class="next" onclick="formnext(event)" id="next" disabled tabindex=3>Next</button>
 
             <div class="button-wrapper" style="display: none" id='submitwrapper'>
               <div class="loader" id="loader" style="display:none"></div>
-
+              <button class="back" id="back" type="button" onclick="formback(event)">&#8592; Back</button>
               <button class="submit" id="submit" type="submit" disabled>Submit </button>
               <div id="thanks" class="success" style="opacity: 0;">
                 Thanks! We'll be in touch.
