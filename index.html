@@ -15,16 +15,18 @@
       const url = "https://script.google.com/macros/s/AKfycbx-DA4YfjmJhiox74DpDT7400fUiCxSXnnNeHVW1geBMWNdnReCHrh7mg/exec"
       const form = document.forms['email-form'];
       const submit = document.getElementById('submit')
+
       form.addEventListener('submit', e => {
         e.preventDefault();
         document.getElementById('loader').style.display = '';
         submit.style.opacity = '0';
         submit.style.cursor = 'auto'
         submit.disabled = true
-
-        Array.from(document.getElementsByTagName('textarea')).forEach((el) => { el.style.opacity = "60%"; el.style.pointerEvents = "none" })
-        document.getElementById('email').style.opacity="60%"
-        document.getElementById('email').style.pointerEvents="none"
+        const sminfo = document.getElementById('sminfo')
+        sminfo.style.opacity = "60%"
+        sminfo.style.pointerEvents = 'none'
+        document.getElementById('email').style.opacity = "60%"
+        document.getElementById('email').style.pointerEvents = "none"
 
         fetch(url, { method: 'POST', body: new FormData(form) })
           .then(response => {
@@ -37,12 +39,71 @@
       });
     }
 
+
+    function formbtnclick(id) {
+      const ta = document.getElementById(id)
+      const taAdd = document.getElementById(id + "_plus")
+      const taIcon = document.getElementById(id + "_icon")
+
+      ta.style.maxWidth === "0px" ? ta.style.maxWidth = "360px" : ta.style.maxWidth = "0px";
+      ta.style.opacity === "0" ? ta.style.opacity = "100%" : ta.style.opacity = "0%";
+      ta.style.pointerEvents === "none" ? ta.style.pointerEvents = "" : ta.style.pointerEvents = "none"
+      taIcon.style.right !== "0px" ? taIcon.style.right = "0px" : taIcon.style.right = "300px";
+      taIcon.style.opacity === "0" ? taIcon.style.opacity = "100%" : taIcon.style.opacity = "0%";
+
+      const src = taAdd.src.toString();
+      src.includes("add-circle.svg") ? taAdd.src = "assets/remove-circle.svg" : taAdd.src = "assets/add-circle.svg"
+
+    }
+
+    function formnext(e) {
+      e.preventDefault()
+      const nameinfo = document.getElementById('nameinfo')
+      const form = document.forms['email-form']
+      const name = document.getElementById('name')
+      const email = document.getElementById('email')
+
+      const next = document.getElementById('next')
+
+      if (!name.checkValidity() || !email.checkValidity()) {
+        return false
+      }
+      const sminfo = document.getElementById('sminfo')
+      const submitwrapper = document.getElementById('submitwrapper')
+      nameinfo.style.display = 'none'
+      sminfo.style.opacity = '100%'
+      sminfo.style.pointerEvents = ''
+      next.style.display = 'none'
+      submitwrapper.style.display = ''
+    }
+
+    function checknextvalid() {
+      const form = document.forms['email-form']
+      const name = document.getElementById('name')
+      const email = document.getElementById('email')
+      const tw = document.getElementById('tw')
+      const inst = document.getElementById('in')
+      const tik = document.getElementById('tik')
+      const fb = document.getElementById('fb')
+      const yt = document.getElementById('yt')
+
+      const next = document.getElementById('next')
+      form.addEventListener("input", () => {
+        next.disabled = !(name.checkValidity() && email.checkValidity())
+        submit.disabled = (tw.value.length == 0 && inst.value.length == 0 && tik.value.length == 0 && fb.value.length == 0 && yt.value.length == 0)
+      });
+
+    }
+
+    window.addEventListener('DOMContentLoaded', () => { checknextvalid(); mailform() })
+
   </script>
+
   <title>Filaxis Insurance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body onload="mailform()">
+<body>
   <div class="header"> <a href="/"><img class="logo" src="assets/Filaxis.svg"></a>
 
     <div class="spacer"></div>
@@ -158,16 +219,81 @@
           <h3>Request a Quote</h3>
           <form name="email-form" class="form">
 
-            <label for="email">Email</label><br>
-            <input type="email" id="email" name="email" required></input><br>
-            <label for="name">Name</label><br>
-            <textarea type="text" id="name" name="name" required></textarea><br>
-            <label for="sm">Social Media Handles</label><br>
-            <textarea type="text" id="sm" name="sm" required></textarea>
-            <div class="button-wrapper">
+            <div class="name-info" id="nameinfo">
+              <p>Tell us your name</p>
+              <div class="sm-wrapper">
+                <textarea type="text" id="name" name="name" required placeholder="Name"></textarea><br>
+
+                <img src="assets/user.svg" class="sm-icon" style="right:0">
+              </div>
+
+
+              <p>Tell us your email</p>
+              <div class="sm-wrapper">
+                <input type="email" id="email" name="email" required placeholder="Email"></input>
+
+                <img src="assets/email.svg" class="sm-icon" style="right:0">
+
+              </div>
+            </div>
+
+            <div class="sm-info" style="opacity: 0; pointer-events: none;" id="sminfo">
+              <div class="sm-big-wrapper">
+                <div class="sm-label">Twitter</div>
+                <div class="sm-wrapper">
+                  <img src="assets/add-circle.svg" class="sm-plus" id="tw_plus" onclick="formbtnclick('tw')">
+                  <textarea type="text" id="tw" name="tw" maxlength="40"
+                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+                  <img src="assets/twitter.svg" class="sm-icon" id="tw_icon" style="right:300px; opacity:0;">
+                </div>
+
+                <div class="sm-label">Instagram</div>
+                <div class="sm-wrapper">
+
+                  <img src="assets/add-circle.svg" class="sm-plus" id="in_plus" onclick="formbtnclick('in')">
+                  <textarea type="text" id="in" name="in" maxlength="40"
+                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+
+                  <img src="assets/insta.svg" class="sm-icon" id="in_icon" style="right:300px; opacity:0;">
+                </div>
+
+                <div class="sm-label">TikTok</div>
+                <div class="sm-wrapper">
+
+                  <img src="assets/add-circle.svg" class="sm-plus" id="tik_plus" onclick="formbtnclick('tik')">
+                  <textarea type="text" id="tik" name="tik" maxlength="40"
+                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+
+                  <img src="assets/tik-tok.svg" class="sm-icon" id="tik_icon" style="right:300px; opacity:0;">
+                </div>
+
+                <div class="sm-label">Facebook</div>
+                <div class="sm-wrapper">
+                  <img src="assets/add-circle.svg" class="sm-plus" id="fb_plus" onclick="formbtnclick('fb')">
+                  <textarea type="text" id="fb" name="fb" maxlength="50"
+                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+
+                  <img src="assets/facebook-quote.svg" class="sm-icon" id="fb_icon" style="right:300px; opacity:0;">
+                </div>
+
+                <div class="sm-label">YouTube</div>
+                <div class="sm-wrapper">
+
+                  <img src="assets/add-circle.svg" class="sm-plus" id="yt_plus" onclick="formbtnclick('yt')">
+                  <textarea type="text" id="yt" name="yt" maxlength="40"
+                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+
+                  <img src="assets/youtube.svg" class="sm-icon" id="yt_icon" style="right:300px; opacity:0;">
+                </div><br>
+              </div>
+            </div>
+
+            <button class="next" onclick="formnext(event)" id="next" disabled>Next</button>
+
+            <div class="button-wrapper" style="display: none" id='submitwrapper'>
               <div class="loader" id="loader" style="display:none"></div>
 
-              <button class="submit" id="submit" type="submit">Submit </button>
+              <button class="submit" id="submit" type="submit" disabled>Submit </button>
               <div id="thanks" class="success" style="opacity: 0;">
                 Thanks! We'll be in touch.
               </div>
