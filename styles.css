@@ -149,7 +149,7 @@ hr {
 .form {
   position: relative;
   padding-top: 8px;
-  height: 464px;
+  height: 400px;
   width: 400px;
 }
 
@@ -264,17 +264,12 @@ input {
   align-items: center;
   align-content: center;
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   width: 400px;
 }
 
-
-.sm-plus {
-  height: 28px;
-  width: auto;
-  margin-right: 12px;
-  cursor: pointer;
-  border-radius: 50%;
+.sm-big-wrapper .sm-wrapper {
+  margin-bottom: 20px;
 }
 
 .sm-icon {
@@ -285,11 +280,12 @@ input {
   position: absolute;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
-  transition: right 500ms ease-in-out, opacity 500ms ease-in-out;
+  right: 0;
 }
 
 .sm-label {
   font-size: 16px;
+  margin-left: 4px;
 }
 
 
@@ -328,7 +324,6 @@ input:focus, textarea:focus {
   cursor: pointer;
   transition: opacity 300ms ease-in-out;
   z-index: 1;
-
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
   bottom: 0px;
   right: 0;
@@ -669,6 +664,24 @@ position: absolute;
     height: auto;
   }
 
+  .form {
+    width: calc(100vw - 72px);
+  }
+
+  .sm-wrapper {
+    max-width: calc(100vw - 72px);
+  }
+
+  .next, .submit {
+    font-size: 18px;
+    width: 120px;
+  }
+
+  
+  input {
+    max-width: 100%;
+  }
+
   .section:last-child {
     max-width: 100%;
   }
@@ -767,9 +780,7 @@ position: absolute;
   label {
     font-size: 16px;
   }
-  .submit {
-    font-size: 20px;
-  }
+
 
   .success {
     font-size: 20px;

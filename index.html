@@ -40,21 +40,6 @@
     }
 
 
-    function formbtnclick(id) {
-      const ta = document.getElementById(id)
-      const taAdd = document.getElementById(id + "_plus")
-      const taIcon = document.getElementById(id + "_icon")
-
-      ta.style.maxWidth === "0px" ? ta.style.maxWidth = "360px" : ta.style.maxWidth = "0px";
-      ta.style.opacity === "0" ? ta.style.opacity = "100%" : ta.style.opacity = "0%";
-      ta.style.pointerEvents === "none" ? ta.style.pointerEvents = "" : ta.style.pointerEvents = "none"
-      taIcon.style.right !== "0px" ? taIcon.style.right = "0px" : taIcon.style.right = "300px";
-      taIcon.style.opacity === "0" ? taIcon.style.opacity = "100%" : taIcon.style.opacity = "0%";
-
-      const src = taAdd.src.toString();
-      src.includes("add-circle.svg") ? taAdd.src = "assets/remove-circle.svg" : taAdd.src = "assets/add-circle.svg"
-
-    }
 
     function formnext(e) {
       e.preventDefault()
@@ -238,52 +223,44 @@
             </div>
 
             <div class="sm-info" style="opacity: 0; pointer-events: none;" id="sminfo">
+
+              <p>Tell us any social media</p>
               <div class="sm-big-wrapper">
-                <div class="sm-label">Twitter</div>
                 <div class="sm-wrapper">
-                  <img src="assets/add-circle.svg" class="sm-plus" id="tw_plus" onclick="formbtnclick('tw')">
                   <textarea type="text" id="tw" name="tw" maxlength="40"
-                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
-                  <img src="assets/twitter.svg" class="sm-icon" id="tw_icon" style="right:300px; opacity:0;">
+                   placeholder="Twitter" ></textarea>
+                  <img src="assets/twitter.svg" class="sm-icon" id="tw_icon" >
                 </div>
 
-                <div class="sm-label">Instagram</div>
                 <div class="sm-wrapper">
 
-                  <img src="assets/add-circle.svg" class="sm-plus" id="in_plus" onclick="formbtnclick('in')">
-                  <textarea type="text" id="in" name="in" maxlength="40"
-                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+                  <textarea type="text" id="in" name="in" maxlength="40" placeholder="Instagram"
+                    ></textarea>
 
-                  <img src="assets/insta.svg" class="sm-icon" id="in_icon" style="right:300px; opacity:0;">
+                  <img src="assets/insta.svg" class="sm-icon" id="in_icon" >
                 </div>
 
-                <div class="sm-label">TikTok</div>
                 <div class="sm-wrapper">
 
-                  <img src="assets/add-circle.svg" class="sm-plus" id="tik_plus" onclick="formbtnclick('tik')">
-                  <textarea type="text" id="tik" name="tik" maxlength="40"
-                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+                  <textarea type="text" id="tik" name="tik" maxlength="40" placeholder="TikTok"
+                    ></textarea>
 
-                  <img src="assets/tik-tok.svg" class="sm-icon" id="tik_icon" style="right:300px; opacity:0;">
+                  <img src="assets/tik-tok.svg" class="sm-icon" id="tik_icon" >
                 </div>
 
-                <div class="sm-label">Facebook</div>
                 <div class="sm-wrapper">
-                  <img src="assets/add-circle.svg" class="sm-plus" id="fb_plus" onclick="formbtnclick('fb')">
-                  <textarea type="text" id="fb" name="fb" maxlength="50"
-                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+                  <textarea type="text" id="fb" name="fb" maxlength="50" placeholder="Facebook"
+                    ></textarea>
 
-                  <img src="assets/facebook-quote.svg" class="sm-icon" id="fb_icon" style="right:300px; opacity:0;">
+                  <img src="assets/facebook-quote.svg" class="sm-icon" id="fb_icon">
                 </div>
 
-                <div class="sm-label">YouTube</div>
                 <div class="sm-wrapper">
 
-                  <img src="assets/add-circle.svg" class="sm-plus" id="yt_plus" onclick="formbtnclick('yt')">
-                  <textarea type="text" id="yt" name="yt" maxlength="40"
-                    style="max-width:0; opacity: 0; pointer-events: none;"></textarea>
+                  <textarea type="text" id="yt" name="yt" maxlength="40" placeholder="YouTube"
+                    ></textarea>
 
-                  <img src="assets/youtube.svg" class="sm-icon" id="yt_icon" style="right:300px; opacity:0;">
+                  <img src="assets/youtube.svg" class="sm-icon" id="yt_icon" style=>
                 </div><br>
               </div>
             </div>
