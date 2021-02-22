@@ -23,6 +23,8 @@
         submit.disabled = true
 
         Array.from(document.getElementsByTagName('textarea')).forEach((el) => { el.style.opacity = "60%"; el.style.pointerEvents = "none" })
+        document.getElementById('email').style.opacity="60%"
+        document.getElementById('email').style.pointerEvents="none"
 
         fetch(url, { method: 'POST', body: new FormData(form) })
           .then(response => {
@@ -157,7 +159,7 @@
           <form name="email-form" class="form">
 
             <label for="email">Email</label><br>
-            <textarea type="email" id="email" name="email" required></textarea><br>
+            <input type="email" id="email" name="email" required></input><br>
             <label for="name">Name</label><br>
             <textarea type="text" id="name" name="name" required></textarea><br>
             <label for="sm">Social Media Handles</label><br>
