@@ -73,6 +73,7 @@ h5 {
 
 .share {
   font-size: 20px;
+  font-weight: 700;
 }
 
 .share-wrapper {
@@ -115,16 +116,16 @@ ul.share-buttons .sr-only{
 }
 
 ul.share-buttons img{
-  width: 32px;
+  width: 48px;
 
   margin: 4px 8px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
   border-radius: 50%;
 }
 
 ul.share-buttons img:hover {
 
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 5px 15px;
 }
 
 .terms-block {
@@ -244,7 +245,7 @@ ul.share-buttons img:hover {
   font-size: 20px;
   cursor: pointer;
   transition: opacity 300ms ease-in-out;
-  z-index: 1;
+  z-index: 0;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
   position: absolute;
   top: 200px;
@@ -395,7 +396,7 @@ textarea:focus {
   right: 0;
   cursor: pointer;
   transition: opacity 300ms ease-in-out;
-  z-index: 1;
+  z-index: 0;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
   bottom: 0px;
   right: 0;
