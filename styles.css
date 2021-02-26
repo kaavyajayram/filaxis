@@ -98,6 +98,7 @@ ul.share-buttons{
   list-style: none;
   padding: 0;
   margin: 12px;
+  position: relative;
 }
 
 ul.share-buttons li{
@@ -116,11 +117,26 @@ ul.share-buttons .sr-only{
 }
 
 ul.share-buttons img{
-  width: 48px;
+  width: 40px;
 
   margin: 4px 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
   border-radius: 50%;
+}
+
+ ul.share-buttons .share-img {
+  height: 44px;
+  width: auto;
+  border-radius: unset;
+  box-shadow: unset;
+  position: absolute;
+  left: 48px;
+  top: 60px;
+}
+
+ul.share-buttons .share-img:hover {
+  box-shadow: unset;
+  width: auto;
 }
 
 ul.share-buttons img:hover {
@@ -1010,4 +1026,5 @@ h4 {
     height: auto;
     padding-top: 16px;
   }
+ 
 }
