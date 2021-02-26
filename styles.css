@@ -124,20 +124,14 @@ ul.share-buttons img{
   border-radius: 50%;
 }
 
- ul.share-buttons .share-img {
+ .share-img {
   height: 44px;
   width: auto;
   border-radius: unset;
   box-shadow: unset;
-  position: absolute;
-  left: 48px;
-  top: 60px;
 }
 
-ul.share-buttons .share-img:hover {
-  box-shadow: unset;
-  width: auto;
-}
+
 
 ul.share-buttons img:hover {
 
